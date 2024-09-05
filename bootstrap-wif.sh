@@ -9,7 +9,7 @@ if [ $# == 0 ]; then
     exit 3
 fi
 
-# ./bootstrap-wif.sh -p 'gcp-lab-host-project' -s 'safecloud-bootstrap' -r 'EPAM-SP/client-contoso-gcp' 
+./bootstrap-wif.sh -p 'gcp-lab-host-project' -s 'safecloud-bootstrap' -r 'EPAM-SP/client-contoso-gcp' 
 
 while getopts p:r:s: flag
 do
@@ -21,8 +21,7 @@ do
 done
 
 gcloud config set project $PROJECT_ID
-
-ORGANIZATION_ID=$(gcloud projects get-ancestors "${PROJECT_ID}" | grep organization | awk '{print $1}')
+ORGANIZATION_ID=$(gcloud projects get-ancestors "${PROJECT_ID}" --format="value(id,type)" | awk '$2 == "organization" {print $1}')
 PROJECT_NUMBER=$(gcloud projects list --filter="${PROJECT_ID}" --format="value(PROJECT_NUMBER)")
 
 gcloud iam service-accounts create "${SA_NAME}" \
