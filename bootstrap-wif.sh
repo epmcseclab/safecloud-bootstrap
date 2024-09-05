@@ -1,25 +1,24 @@
 #!/usr/bin/env bash
 
 if [ $# == 0 ]; then
-    echo "Usage: $0 -p 'PROJECT_ID' -s 'SERVICE_ACCOUNT_NAME' -r 'GITHUB_ORG/GITHUB_REPO' "
-    echo "* -p: GCP Project ID"
+    echo "Usage: $0 -s 'SERVICE_ACCOUNT_NAME' -r 'GITHUB_ORG/GITHUB_REPO' "
     echo "* -s: GCP Service account name"
     echo "* -r: Github organization/repository"
 
     exit 3
 fi
 
-# /bootstrap-wif.sh -p 'gcp-lab-host-project' -s 'safecloud-bootstrap' -r 'EPAM-SP/client-contoso-gcp' 
+# /bootstrap-wif.sh -s 'safecloud-bootstrap' -r 'EPAM-SP/client-contoso-gcp' 
 
-while getopts p:r:s: flag
+while getopts r:s: flag
 do
     case "${flag}" in
-        p) PROJECT_ID=${OPTARG};;
         r) GH_REPO=${OPTARG};;
         s) SA_NAME=${OPTARG};;
     esac
 done
 
+PROJECT_ID=$(gcloud config get-value project)
 ORGANIZATION_ID=$(gcloud projects get-ancestors "${PROJECT_ID}" | grep organization | awk '{print $1}')
 PROJECT_NUMBER=$(gcloud projects list --filter="${PROJECT_ID}" --format="value(PROJECT_NUMBER)")
 
