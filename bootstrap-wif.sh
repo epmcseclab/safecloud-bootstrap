@@ -9,8 +9,6 @@ if [ $# == 0 ]; then
     exit 3
 fi
 
-./bootstrap-wif.sh -p 'gcp-lab-host-project' -s 'safecloud-bootstrap' -r 'EPAM-SP/client-contoso-gcp' 
-
 while getopts p:r:s: flag
 do
     case "${flag}" in
