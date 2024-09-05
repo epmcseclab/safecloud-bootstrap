@@ -65,5 +65,7 @@ gcloud iam service-accounts add-iam-policy-binding "${SA_NAME}@${PROJECT_ID}.iam
   --role="roles/iam.workloadIdentityUser" \
   --member="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${SA_NAME}/attribute.repository/${GH_REPO}"
 
+clear
+
 echo "workload_identity_provider : 'projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${SA_NAME}/providers/${SA_NAME}'"
 echo "service_account : '${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com'"
