@@ -12,7 +12,7 @@ Try running a command now:
 
 **Tip**: Click the copy button on the side of the code box to paste the command in the Cloud Shell terminal to run it.
 
-
-<walkthrough-footnote>Please copy and save "workload_identity_provider" and "service_account" values returned by script</walkthrough-footnote>
+<walkthrough-pin-section-icon></walkthrough-pin-section-icon>
+Please copy and save "workload_identity_provider" and "service_account" values returned by script
 
 
