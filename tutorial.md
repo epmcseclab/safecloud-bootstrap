@@ -1,15 +1,11 @@
-## Create a Workloa
+## Using the Provided Script
 
-What you're looking at now is an in-context tutorial.
-
-The content is shown along with the Cloud Shell environment where you can carry out the tutorial steps. Having the tutorial and development environment open in the same place makes it easier for your users to start using your project through a straightforward single screen experience.
+This script automates the creation of a Google Cloud Workload Identity Pool, allowing a GitHub Actions workflow to authenticate as a Google Cloud service account without managing long-lived service account keys.
 
 Try running a command now:
 
 ```bash
-
-./bootstrap-wif.sh -s 'safecloud-bootstrap' -r 'EPAM-SP/client-contoso-gcp' 
-
+./bootstrap-wif.sh -p 'gcp-lab-host-project' -s 'safecloud-bootstrap' -r 'EPAM-SP/client-contoso-gcp' 
 ```
 
 **Tip**: Click the copy button on the side of the code box to paste the command in the Cloud Shell terminal to run it.
