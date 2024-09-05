@@ -1,4 +1,4 @@
-## Using the Provided Script
+## Using the Bootstrap Script
 
 This script automates the creation of a Google Cloud Workload Identity Pool, allowing a GitHub Actions workflow to authenticate as a Google Cloud service account without managing long-lived service account keys.
 
@@ -14,5 +14,3 @@ Try running a command now:
 
 <walkthrough-pin-section-icon></walkthrough-pin-section-icon>
 Please copy and save "workload_identity_provider" and "service_account" values returned by script
-
-

@@ -8,7 +8,7 @@ if [ $# == 0 ]; then
 
     exit 3
 fi
-
+#
 while getopts p:r:s: flag
 do
     case "${flag}" in
