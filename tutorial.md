@@ -13,7 +13,6 @@ Try running a command now:
 **Tip**: Click the copy button on the side of the code box to paste the command in the Cloud Shell terminal to run it.
 
 
-echo "workload_identity_provider : 'projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${SA_NAME}/providers/${SA_NAME}'"
-echo "service_account : '${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com'"
+<walkthrough-footnote>Please copy and save "workload_identity_provider" and "service_account" values returned by script</walkthrough-footnote>
 
 
